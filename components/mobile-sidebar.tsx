@@ -17,7 +17,7 @@ export const MobileSidebar = () => {
    const [sidebarOpen, setSidebarOpen] = useState(false);
 
    return (
-      <div className="md:hidden">
+      <div className="lg:hidden">
          <Sheet open={sidebarOpen} onOpenChange={setSidebarOpen}>
             <SheetTrigger asChild className="m-4">
                <Button variant="outline" size="icon">

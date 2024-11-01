@@ -8,12 +8,8 @@ export const components = [
       collapsibleIcon: LayoutDashboard,
       designs: [
          {
-            name: "Simple Dashboard",
-            href: `${dashboardLink}/simple`,
-         },
-         {
-            name: "E-commerce Dashboard",
-            href: `${dashboardLink}/e-commerce`,
+            name: "Dashboard 1",
+            href: `${dashboardLink}/1`,
          },
       ],
    },

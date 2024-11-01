@@ -34,10 +34,11 @@ export const Sidebar = () => {
          <ScrollArea className="h-full">
             <div className="p-4">
                {/* Logo */}
-               <div className="flex items-center mb-6">
+               <Link href="/" className="flex items-center mb-6">
                   <Box className="h-7 w-7 text-primary mr-2" />
                   <h1 className="text-xl font-bold">ui-box</h1>
-               </div>
+               </Link>
+               {/* Components */}
                {components.map((component) => (
                   <Collapsible
                      key={component.collapsibleName}
@@ -64,7 +65,7 @@ export const Sidebar = () => {
                               key={design.name}
                               href={design.href}
                               className={cn(
-                                 buttonVariants({ variant: "ghost" }),
+                                 buttonVariants({ variant: "link" }),
                                  "w-full justify-start font-normal"
                               )}
                            >
