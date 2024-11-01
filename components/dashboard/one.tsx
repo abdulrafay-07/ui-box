@@ -138,7 +138,7 @@ const AddEventModal = () => {
                </DialogDescription>
             </DialogHeader>
             <div>
-               Input fields
+               Add your input fields here
             </div>
             <DialogFooter>
                <Button type="submit">Save</Button>
@@ -187,8 +187,8 @@ export const One = () => {
          <div className="flex-1">
             <MobileSidebar />
             
-            <div className="flex flex-col p-4 md:px-8 w-full">
-               <div className="flex gap-x-8 mb-6">
+            <div className="flex flex-col p-4 md:px-8">
+               <div className="flex items-center gap-x-8 mb-6">
                   <h3
                      className="text-xl md:text-2xl font-semibold cursor-pointer"
                      onClick={() => setSelectedEventType(null)}
@@ -220,92 +220,90 @@ export const One = () => {
                {/* Conditional Event Tables */}
                {selectedEventType ? (
                   <Card className="mb-6">
-                     <CardContent className="p-0">
-                        <div className="overflow-x-auto">
-                           {selectedEventType === "Bug" && (
-                              <Table>
-                                 <TableHeader>
-                                    <TableRow>
-                                       <TableHead>Title</TableHead>
-                                       <TableHead>Date</TableHead>
-                                       <TableHead>Severity</TableHead>
-                                       <TableHead>Status</TableHead>
+                     <CardContent className="p-0 overflow-x-auto w-[300px] md:w-auto">
+                        {selectedEventType === "Bug" && (
+                           <Table>
+                              <TableHeader>
+                                 <TableRow>
+                                    <TableHead>Title</TableHead>
+                                    <TableHead>Date</TableHead>
+                                    <TableHead>Severity</TableHead>
+                                    <TableHead>Status</TableHead>
+                                 </TableRow>
+                              </TableHeader>
+                              <TableBody>
+                                 {bugEvents.map((event) => (
+                                    <TableRow key={event.id}>
+                                       <TableCell>{event.title}</TableCell>
+                                       <TableCell>{event.date}</TableCell>
+                                       <TableCell>
+                                          <Badge
+                                             variant={event.severity === "High" ? "high" : "low"}
+                                          >
+                                             {event.severity}
+                                          </Badge>
+                                       </TableCell>
+                                       <TableCell>
+                                          <Badge
+                                             variant={event.status === "Closed" ? "high" : "low"}
+                                          >
+                                             {event.status}
+                                          </Badge>
+                                       </TableCell>
                                     </TableRow>
-                                 </TableHeader>
-                                 <TableBody>
-                                    {bugEvents.map((event) => (
-                                       <TableRow key={event.id}>
-                                          <TableCell>{event.title}</TableCell>
-                                          <TableCell>{event.date}</TableCell>
-                                          <TableCell>
-                                             <Badge
-                                                variant={event.severity === "High" ? "high" : "low"}
-                                             >
-                                                {event.severity}
-                                             </Badge>
-                                          </TableCell>
-                                          <TableCell>
-                                             <Badge
-                                                variant={event.status === "Closed" ? "high" : "low"}
-                                             >
-                                                {event.status}
-                                             </Badge>
-                                          </TableCell>
-                                       </TableRow>
-                                    ))}
-                                 </TableBody>
-                              </Table>
-                           )}
-                              {selectedEventType === "Sale" && (
-                              <Table>
-                                 <TableHeader>
-                                    <TableRow>
-                                       <TableHead>Customer</TableHead>
-                                       <TableHead>Date</TableHead>
-                                       <TableHead>Amount</TableHead>
-                                       <TableHead>Plan</TableHead>
+                                 ))}
+                              </TableBody>
+                           </Table>
+                        )}
+                           {selectedEventType === "Sale" && (
+                           <Table>
+                              <TableHeader>
+                                 <TableRow>
+                                    <TableHead>Customer</TableHead>
+                                    <TableHead>Date</TableHead>
+                                    <TableHead>Amount</TableHead>
+                                    <TableHead>Plan</TableHead>
+                                 </TableRow>
+                              </TableHeader>
+                              <TableBody>
+                                 {saleEvents.map((event) => (
+                                    <TableRow key={event.id}>
+                                       <TableCell>{event.customer}</TableCell>
+                                       <TableCell>{event.date}</TableCell>
+                                       <TableCell>${event.amount}</TableCell>
+                                       <TableCell>{event.plan}</TableCell>
                                     </TableRow>
-                                 </TableHeader>
-                                 <TableBody>
-                                    {saleEvents.map((event) => (
-                                       <TableRow key={event.id}>
-                                          <TableCell>{event.customer}</TableCell>
-                                          <TableCell>{event.date}</TableCell>
-                                          <TableCell>${event.amount}</TableCell>
-                                          <TableCell>{event.plan}</TableCell>
-                                       </TableRow>
-                                    ))}
-                                 </TableBody>
-                              </Table>
-                           )}
-                           {selectedEventType === "Signup" && (
-                              <Table>
-                                 <TableHeader>
-                                    <TableRow>
-                                       <TableHead>User</TableHead>
-                                       <TableHead>Date</TableHead>
-                                       <TableHead>Referral</TableHead>
+                                 ))}
+                              </TableBody>
+                           </Table>
+                        )}
+                        {selectedEventType === "Signup" && (
+                           <Table>
+                              <TableHeader>
+                                 <TableRow>
+                                    <TableHead>User</TableHead>
+                                    <TableHead>Date</TableHead>
+                                    <TableHead>Referral</TableHead>
+                                 </TableRow>
+                              </TableHeader>
+                              <TableBody>
+                                 {signupEvents.map((event) => (
+                                    <TableRow key={event.id}>
+                                       <TableCell>{event.user}</TableCell>
+                                       <TableCell>{event.date}</TableCell>
+                                       <TableCell>{event.referral}</TableCell>
                                     </TableRow>
-                                 </TableHeader>
-                                 <TableBody>
-                                    {signupEvents.map((event) => (
-                                       <TableRow key={event.id}>
-                                          <TableCell>{event.user}</TableCell>
-                                          <TableCell>{event.date}</TableCell>
-                                          <TableCell>{event.referral}</TableCell>
-                                       </TableRow>
-                                    ))}
-                                 </TableBody>
-                              </Table>
-                           )}
-                        </div>
+                                 ))}
+                              </TableBody>
+                           </Table>
+                        )}
                      </CardContent>
                   </Card>
                ) : (
                   <div className="flex flex-col items-center justify-center py-10">
                      <MousePointerClick className="h-12 w-12 mb-6 hover:animate-pulse" />
                      <h2 className="text-xl font-medium text-center">
-                        Click on any event to view the table
+                        Click on any event to view the data
                      </h2>
                   </div>
                )}
