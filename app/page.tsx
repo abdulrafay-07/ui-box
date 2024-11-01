@@ -10,7 +10,7 @@ const Home = () => {
     <div className="p-4">
       <div className="flex flex-col text-neutral-800 px-4">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-10">
-          Hey there! You are at the right place 😉
+          Hey! You are at the right place 😉
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {components.map((component) => (
