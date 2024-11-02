@@ -1,6 +1,7 @@
-"use client"
+export const dashboardOne = `"use client"
 
 import { useState } from "react";
+import Link from "next/link";
 
 import {
    DropdownMenu,
@@ -53,16 +54,14 @@ const Sidebar = () => {
    return (
       <div className="h-full lg:h-[36rem] flex flex-col justify-between bg-white border-r p-4 rounded-l-xl">
          <div>
-            <div className="flex items-center mb-6">
+            <Link href="/" className="flex items-center mb-6">
                <Eclipse className="h-7 w-7 text-primary mr-2" />
                <h1 className="text-xl font-bold">Fight Club</h1>
-            </div>
+            </Link>
             <nav>
-               <ul className="cursor-pointer">
-                  <li className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded">Dashboard</li>
-                  <li className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded">Events</li>
-                  <li className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded">Analytics</li>
-               </ul>
+               <Link href="#" className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded">Dashboard</Link>
+               <Link href="#" className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded">Events</Link>
+               <Link href="#" className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded">Analytics</Link>
             </nav>
          </div>
          <DropdownMenu>
@@ -307,4 +306,4 @@ export const One = () => {
          </div>
       </div>
    )
-};
+};`
