@@ -52,7 +52,7 @@ import { cn } from "@/lib/utils";
 
 const Sidebar = () => {
    return (
-      <div className="h-full lg:h-[36rem] flex flex-col justify-between bg-white border-r p-4 rounded-l-xl">
+      <div className="h-full flex flex-col justify-between bg-white border-r p-4 rounded-l-xl">
          <div>
             <Link href="/" className="flex items-center mb-6">
                <Eclipse className="h-7 w-7 text-primary mr-2" />
@@ -174,7 +174,7 @@ const eventTypes = [
    {type: "Signup", count: signupEvents.length},
 ];
 
-export const One = () => {
+export const Dashboard = () => {
    const [selectedEventType, setSelectedEventType] = useState<string | null>(null);
 
    return (

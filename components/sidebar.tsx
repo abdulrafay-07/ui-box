@@ -40,43 +40,45 @@ export const Sidebar = () => {
                      <Box className="h-7 w-7 text-primary mr-2" />
                      <h1 className="text-xl font-bold">ui-box</h1>
                   </Link>
-                  {/* Components */}
-                  {components.map((component) => (
-                     <Collapsible
-                        key={component.collapsibleName}
-                        open={openItems[component.collapsibleName]}
-                        onOpenChange={() => handleToggle(component.collapsibleName)}
-                     >
-                        <CollapsibleTrigger
-                           className="flex items-center justify-between w-full p-2 text-sm text-left text-gray-900 rounded-lg hover:bg-gray-100 font-medium"
+                  <ScrollArea className="max-h-[30rem] h-full">
+                     {/* Components */}
+                     {components.map((component) => (
+                        <Collapsible
+                           key={component.collapsibleName}
+                           open={openItems[component.collapsibleName]}
+                           onOpenChange={() => handleToggle(component.collapsibleName)}
                         >
-                           <span className="flex items-center">
-                              <component.collapsibleIcon className="w-5 h-5 mr-2" />
-                              {component.collapsibleName}
-                           </span>
-                           <ChevronRight 
-                              className={cn(
-                                 "h-4 w-4 transition-transform duration-100",
-                                 openItems[component.collapsibleName] && "rotate-90"
-                              )}
-                           />
-                        </CollapsibleTrigger>
-                        <CollapsibleContent className="pl-2 mt-2 space-y-2">
-                           {component.designs.map((design) => (
-                              <Link
-                                 key={design.name}
-                                 href={design.href}
+                           <CollapsibleTrigger
+                              className="flex items-center justify-between w-full p-2 text-sm text-left text-gray-900 rounded-lg hover:bg-gray-100 font-medium mb-2"
+                           >
+                              <span className="flex items-center">
+                                 <component.collapsibleIcon className="w-5 h-5 mr-2" />
+                                 {component.collapsibleName}
+                              </span>
+                              <ChevronRight 
                                  className={cn(
-                                    buttonVariants({ variant: "link" }),
-                                    "w-full justify-start font-normal"
+                                    "h-4 w-4 transition-transform duration-100",
+                                    openItems[component.collapsibleName] && "rotate-90"
                                  )}
-                              >
-                                 {design.name}
-                              </Link>
-                           ))}
-                        </CollapsibleContent>
-                     </Collapsible>
-                  ))}
+                              />
+                           </CollapsibleTrigger>
+                           <CollapsibleContent className="pl-2 mt-2 space-y-2">
+                              {component.designs.map((design) => (
+                                 <Link
+                                    key={design.name}
+                                    href={design.href}
+                                    className={cn(
+                                       buttonVariants({ variant: "link" }),
+                                       "w-full justify-start font-normal"
+                                    )}
+                                 >
+                                    {design.name}
+                                 </Link>
+                              ))}
+                           </CollapsibleContent>
+                        </Collapsible>
+                     ))}
+                  </ScrollArea>
                </div>
                <RequestFeature />
             </div>

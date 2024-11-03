@@ -1,7 +1,7 @@
 import { One as DashboardOneComponent } from "@/components/dashboard/one";
 import { Code } from "@/components/dashboard/code";
 
-import { dashboardOne } from "@/constants/codes";
+import { dashboardOne } from "@/constants/codes/dashboard";
 
 const DashboardOne = () => {
    return (
