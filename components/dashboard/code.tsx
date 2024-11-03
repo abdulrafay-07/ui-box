@@ -24,7 +24,7 @@ export const Code = ({
 
    return (
       <div className="bg-white rounded-xl p-4 border">
-         <div className="border bg-neutral-800 text-muted p-4 rounded-sm overflow-auto relative group h-[30rem]">
+         <div className="border bg-neutral-800 text-muted p-4 rounded-sm overflow-auto relative group h-[30rem] w-[300px] mx-auto md:w-auto">
             <Button
                variant="ghostDark"
                size="sm"
