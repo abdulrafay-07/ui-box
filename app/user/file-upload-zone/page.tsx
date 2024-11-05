@@ -1,7 +1,7 @@
-import { FileUploadOne } from "@/components/misc/file-upload-one";
+import { FileUploadOne } from "@/components/user/file-upload-one";
 import { Code } from "@/components/dashboard/code";
 
-import { fileUploadOneCode } from "@/constants/codes/misc";
+import { fileUploadOneCode } from "@/constants/codes/user";
 
 const FileUploadZone = () => {
    return (

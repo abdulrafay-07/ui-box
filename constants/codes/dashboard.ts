@@ -52,7 +52,7 @@ import { cn } from "@/lib/utils";
 
 const Sidebar = () => {
    return (
-      <div className="h-full flex flex-col justify-between bg-white border-r p-4 rounded-l-xl">
+      <div className="h-full flex flex-col justify-between bg-white border-r p-4">
          <div>
             <Link href="/" className="flex items-center mb-6">
                <Eclipse className="h-7 w-7 text-primary mr-2" />

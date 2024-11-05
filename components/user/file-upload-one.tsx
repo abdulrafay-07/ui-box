@@ -36,7 +36,7 @@ export const FileUploadOne = () => {
    };
 
    return (
-      <div className="h-full flex flex-col items-center justify-between bg-white border-r p-4 rounded-l-xl">
+      <div className="flex flex-col items-center justify-between bg-white border-r p-4 rounded-xl border">
          <Card className="w-full max-w-lg py-4">
             <CardHeader>
                <CardTitle className="text-2xl text-center">File Upload</CardTitle>

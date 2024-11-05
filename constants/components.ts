@@ -1,7 +1,8 @@
-import { LayoutDashboard, Slash } from "lucide-react";
+import { LayoutDashboard, Slash, User } from "lucide-react";
 
 const dashboardLink = "/dashboard";
 const miscLink = "/misc";
+const userLink = "/user";
 
 export const components = [
    {
@@ -15,13 +16,18 @@ export const components = [
       ],
    },
    {
-      collapsibleName: "Misc",
-      collapsibleIcon: Slash,
+      collapsibleName: "User",
+      collapsibleIcon: User,
       designs: [
          {
+            name: "Advanced Search Bar",
+            href: `${userLink}/advanced-search-bar`,
+         },
+         {
             name: "File Upload Zone",
-            href: `${miscLink}/file-upload-zone`,
+            href: `${userLink}/file-upload-zone`,
          },
       ],
+      
    },
 ];
