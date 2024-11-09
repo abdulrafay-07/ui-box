@@ -6,6 +6,7 @@ import { Sidebar } from "@/components/sidebar";
 import { MobileSidebar } from "@/components/mobile-sidebar";
 
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "ui box",
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body
         className={`${font.className} antialiased flex bg-gray-100`}
       >
+        <Analytics />
         <Toaster />
         <aside className="hidden lg:block w-64 p-4">
           <Sidebar />
